@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MuktaNarayan Solutions Private Limited</title>
+<meta name="description" content="MuktaNarayan Solutions Pvt Ltd — Software development, app publishing, and tech solutions for Australian and global clients."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0d1f3c;
+  --navy2:#162d54;
+  --blue:#185FA5;
+  --blue-light:#378ADD;
+  --teal:#1D9E75;
+  --teal-light:#5DCAA5;
+  --teal-pale:#E1F5EE;
+  --bg:#f4f7fb;
+  --white:#ffffff;
+  --text:#0d1f3c;
+  --text-muted:#4a5a72;
+  --border:#dde4ef;
+  --font-head:'Syne',sans-serif;
+  --font-body:'DM Sans',sans-serif;
+  --radius:12px;
+  --radius-lg:20px;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--text);background:var(--bg);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,31,60,0.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,0.08)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-icon{width:36px;height:36px}
+.nav-logo-text{font-family:var(--font-head);font-weight:700;font-size:16px;color:#fff;letter-spacing:0.01em}
+.nav-logo-text span{color:var(--teal-light)}
+.nav-links{display:flex;gap:4px;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:14px;padding:6px 12px;border-radius:6px;transition:all 0.2s}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,0.08)}
+.nav-cta{background:var(--teal);color:#fff;padding:8px 18px;border-radius:8px;font-size:14px;font-weight:500;text-decoration:none;transition:all 0.2s}
+.nav-cta:hover{background:var(--teal-light);transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{width:22px;height:2px;background:#fff;border-radius:2px;transition:all 0.3s}
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:var(--navy);z-index:99;padding:16px 24px;flex-direction:column;gap:4px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:15px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 50%,#0f3060 100%);min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:68px}
+.hero-bg-dots{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
+.hero-glow{position:absolute;top:-100px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(29,158,117,0.12) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:1200px;margin:0 auto;padding:80px 24px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(29,158,117,0.15);border:1px solid rgba(29,158,117,0.3);border-radius:100px;padding:6px 14px;font-size:13px;color:var(--teal-light);margin-bottom:24px}
+.hero-badge-dot{width:6px;height:6px;background:var(--teal-light);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}
+.hero h1{font-family:var(--font-head);font-size:clamp(36px,5vw,58px);font-weight:800;color:#fff;line-height:1.1;margin-bottom:20px}
+.hero h1 em{color:var(--teal-light);font-style:normal}
+.hero-sub{font-size:17px;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:36px;max-width:480px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--teal);color:#fff;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:500;text-decoration:none;transition:all 0.25s;display:inline-block}
+.btn-primary:hover{background:var(--teal-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(29,158,117,0.35)}
+.btn-outline{background:transparent;color:#fff;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:500;text-decoration:none;border:1.5px solid rgba(255,255,255,0.25);transition:all 0.25s;display:inline-block}
+.btn-outline:hover{border-color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.05)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.stat-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:16px;text-align:center}
+.stat-num{font-family:var(--font-head);font-size:26px;font-weight:700;color:var(--teal-light)}
+.stat-lbl{font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;line-height:1.4}
+.hero-visual{position:relative;display:flex;justify-content:center}
+.hero-card-stack{position:relative;width:320px;height:360px}
+.hcard{position:absolute;background:rgba(255,255,255,0.07);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-lg);padding:20px}
+.hcard-1{width:260px;top:0;left:30px;transform:rotate(-4deg)}
+.hcard-2{width:280px;top:80px;left:10px;transform:rotate(2deg);background:rgba(29,158,117,0.12);border-color:rgba(29,158,117,0.25)}
+.hcard-3{width:240px;top:180px;left:50px;transform:rotate(-1.5deg)}
+.hcard-icon{width:36px;height:36px;background:var(--teal);border-radius:8px;margin-bottom:10px;display:flex;align-items:center;justify-content:center}
+.hcard-icon svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hcard-title{font-family:var(--font-head);font-size:14px;font-weight:600;color:#fff;margin-bottom:4px}
+.hcard-desc{font-size:12px;color:rgba(255,255,255,0.5);line-height:1.5}
+
+/* SECTIONS */
+section{padding:90px 0}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section-tag{display:inline-block;background:var(--teal-pale);color:var(--teal);font-size:12px;font-weight:500;padding:5px 14px;border-radius:100px;margin-bottom:14px;letter-spacing:0.04em}
+.section-title{font-family:var(--font-head);font-size:clamp(28px,4vw,42px);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:14px}
+.section-sub{font-size:16px;color:var(--text-muted);line-height:1.7;max-width:560px}
+.text-center{text-align:center}
+.text-center .section-sub{margin:0 auto}
+
+/* SERVICES */
+#services{background:#fff}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:52px}
+.svc-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;transition:all 0.3s;cursor:default}
+.svc-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(13,31,60,0.1);border-color:var(--blue-light)}
+.svc-icon{width:48px;height:48px;background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.svc-icon svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.svc-title{font-family:var(--font-head);font-size:18px;font-weight:600;color:var(--navy);margin-bottom:10px}
+.svc-desc{font-size:14px;color:var(--text-muted);line-height:1.7}
+.svc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tag{background:var(--teal-pale);color:var(--teal);font-size:11px;padding:3px 10px;border-radius:100px}
+
+/* ABOUT */
+#about{background:var(--bg)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:52px}
+.about-img-wrap{position:relative}
+.about-card-main{background:var(--navy);border-radius:var(--radius-lg);padding:32px;color:#fff}
+.about-name{font-family:var(--font-head);font-size:22px;font-weight:700;color:#fff;margin-bottom:4px}
+.about-role{font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:16px}
+.about-highlight{background:rgba(29,158,117,0.15);border-left:3px solid var(--teal);border-radius:0 8px 8px 0;padding:12px 16px;margin:16px 0;font-size:13px;color:rgba(255,255,255,0.8);line-height:1.6}
+.about-mini-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.mini-stat{background:rgba(255,255,255,0.06);border-radius:8px;padding:12px;text-align:center}
+.mini-stat-n{font-family:var(--font-head);font-size:20px;font-weight:700;color:var(--teal-light)}
+.mini-stat-l{font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px}
+.about-text h3{font-family:var(--font-head);font-size:24px;font-weight:700;color:var(--navy);margin-bottom:14px}
+.about-text p{font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:14px}
+.about-values{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+.value-item{display:flex;align-items:flex-start;gap:12px}
+.value-dot{width:32px;height:32px;border-radius:8px;background:var(--teal-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.value-dot svg{width:16px;height:16px;stroke:var(--teal);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.value-text strong{display:block;font-size:14px;font-weight:500;color:var(--navy)}
+.value-text span{font-size:13px;color:var(--text-muted)}
+
+/* APPS */
+#apps{background:#fff}
+.apps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:52px}
+.app-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;transition:all 0.3s}
+.app-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(13,31,60,0.1)}
+.app-header{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.app-icon{width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,var(--navy),var(--blue-light));display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:20px;font-weight:800;color:#fff;flex-shrink:0}
+.app-name{font-family:var(--font-head);font-size:17px;font-weight:700;color:var(--navy)}
+.app-cat{font-size:12px;color:var(--text-muted);margin-top:2px}
+.app-desc{font-size:13px;color:var(--text-muted);line-height:1.7;margin-bottom:16px}
+.app-store-btns{display:flex;gap:8px;flex-wrap:wrap}
+.store-btn{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:#fff;font-size:12px;padding:7px 12px;border-radius:8px;text-decoration:none;transition:all 0.2s}
+.store-btn:hover{background:var(--blue);transform:translateY(-1px)}
+.store-btn svg{width:14px;height:14px;fill:#fff}
+.app-placeholder-note{background:var(--teal-pale);border-radius:var(--radius);padding:16px 20px;margin-top:40px;font-size:13px;color:var(--teal);line-height:1.7;border:1px solid rgba(29,158,117,0.2)}
+
+/* PORTFOLIO */
+#portfolio{background:var(--bg)}
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin-top:52px}
+.port-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all 0.3s}
+.port-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(13,31,60,0.1)}
+.port-banner{height:140px;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:28px;font-weight:800;color:#fff;letter-spacing:0.04em}
+.pb-1{background:linear-gradient(135deg,#0d1f3c,#185FA5)}
+.pb-2{background:linear-gradient(135deg,#0f3060,#1D9E75)}
+.pb-3{background:linear-gradient(135deg,#162d54,#378ADD)}
+.pb-4{background:linear-gradient(135deg,#1D9E75,#185FA5)}
+.port-body{padding:20px}
+.port-title{font-family:var(--font-head);font-size:16px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.port-desc{font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:12px}
+.port-meta{display:flex;gap:6px;flex-wrap:wrap}
+.port-tag{background:var(--bg);border:1px solid var(--border);font-size:11px;color:var(--text-muted);padding:3px 8px;border-radius:100px}
+
+/* BLOG */
+#blog{background:#fff}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:52px}
+.blog-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;transition:all 0.3s;cursor:default}
+.blog-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(13,31,60,0.08)}
+.blog-date{font-size:12px;color:var(--teal);font-weight:500;margin-bottom:10px}
+.blog-title{font-family:var(--font-head);font-size:17px;font-weight:600;color:var(--navy);margin-bottom:8px;line-height:1.4}
+.blog-excerpt{font-size:13px;color:var(--text-muted);line-height:1.7}
+.blog-read{display:inline-block;margin-top:14px;font-size:13px;color:var(--blue);font-weight:500;text-decoration:none}
+.blog-read:hover{color:var(--teal)}
+.blog-coming{background:var(--teal-pale);border:1px solid rgba(29,158,117,0.2);border-radius:var(--radius);padding:16px 20px;margin-top:40px;font-size:13px;color:var(--teal);line-height:1.7;text-align:center}
+
+/* CONTACT */
+#contact{background:linear-gradient(135deg,var(--navy),var(--navy2))}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;padding-top:52px}
+.contact-info h3{font-family:var(--font-head);font-size:26px;font-weight:700;color:#fff;margin-bottom:14px}
+.contact-info p{font-size:15px;color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:28px}
+.contact-items{display:flex;flex-direction:column;gap:14px}
+.c-item{display:flex;align-items:center;gap:12px}
+.c-icon{width:38px;height:38px;background:rgba(255,255,255,0.08);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.c-icon svg{width:18px;height:18px;stroke:var(--teal-light);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.c-text span{display:block;font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:1px}
+.c-text a,.c-text p{font-size:14px;color:rgba(255,255,255,0.85);text-decoration:none}
+.contact-form{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-lg);padding:28px}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:6px}
+.form-group input,.form-group textarea,.form-group select{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:8px;color:#fff;font-family:var(--font-body);font-size:14px;padding:11px 14px;outline:none;transition:border-color 0.2s}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--teal)}
+.form-group textarea{resize:vertical;min-height:100px}
+.form-group select option{background:var(--navy);color:#fff}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn-submit{width:100%;background:var(--teal);color:#fff;border:none;border-radius:10px;padding:14px;font-family:var(--font-head);font-size:15px;font-weight:600;cursor:pointer;transition:all 0.25s;margin-top:4px}
+.btn-submit:hover{background:var(--teal-light);transform:translateY(-1px)}
+.form-success{display:none;background:rgba(29,158,117,0.15);border:1px solid rgba(29,158,117,0.3);border-radius:8px;padding:14px;text-align:center;color:var(--teal-light);font-size:14px;margin-top:12px}
+
+/* FOOTER */
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);padding:48px 0 28px}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 24px}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand .nav-logo{margin-bottom:14px;display:inline-flex}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.8;max-width:260px}
+.footer-col h4{font-family:var(--font-head);font-size:13px;font-weight:600;color:rgba(255,255,255,0.6);margin-bottom:14px;letter-spacing:0.05em}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:8px}
+.footer-col ul li a{font-size:13px;color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.2s}
+.footer-col ul li a:hover{color:var(--teal-light)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:gap}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.3)}
+.footer-copy span{color:var(--teal-light)}
+.footer-dpiit{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,0.3)}
+.dpiit-badge{background:rgba(29,158,117,0.15);border:1px solid rgba(29,158,117,0.25);border-radius:4px;padding:2px 8px;font-size:11px;color:var(--teal-light);font-weight:500}
+
+/* ANIMATIONS */
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
+.fade-in.visible{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:40px;text-align:center}
+  .hero-btns{justify-content:center}
+  .hero-stats{max-width:400px;margin:40px auto 0}
+  .hero-visual{display:none}
+  .about-grid{grid-template-columns:1fr}
+  .contact-inner{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .form-row{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .footer-top{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">
+      <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="18" cy="18" r="16" stroke="#378ADD" stroke-width="2.5"/>
+        <circle cx="18" cy="18" r="16" stroke="#185FA5" stroke-width="2.5" stroke-dasharray="60 100" stroke-dashoffset="-10"/>
+        <polygon points="18,8 26,24 18,20 10,24" fill="#185FA5"/>
+        <polygon points="18,11 24,24 18,21" fill="#378ADD"/>
+        <polygon points="18,22 22,28 14,28" fill="#1D9E75"/>
+      </svg>
+      <span class="nav-logo-text">Mukta<span>Narayan</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#apps">Our Apps</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#blog">Blog</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get in Touch</a>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#apps" onclick="toggleMenu()">Our Apps</a>
+  <a href="#portfolio" onclick="toggleMenu()">Portfolio</a>
+  <a href="#blog" onclick="toggleMenu()">Blog</a>
+  <a href="#contact" onclick="toggleMenu()">Get in Touch</a>
+</div>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-bg-dots"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><span class="hero-badge-dot"></span>DPIIT Recognised Startup · India</div>
+      <h1>Building <em>software</em> that grows with your business</h1>
+      <p class="hero-sub">MuktaNarayan Solutions Pvt Ltd delivers expert app development, support, and tech solutions for Australian and global clients — since 2013.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Start a Project</a>
+        <a href="#portfolio" class="btn-outline">View Our Work</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-num">4000+</div>
+          <div class="stat-lbl">App users served</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">12+</div>
+          <div class="stat-lbl">Years of experience</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">AU</div>
+          <div class="stat-lbl">Primary market focus</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <div class="hcard hcard-1">
+          <div class="hcard-icon">
+            <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="15" y2="11"/><line x1="9" y1="15" x2="12" y2="15"/></svg>
+          </div>
+          <div class="hcard-title">Mobile App Development</div>
+          <div class="hcard-desc">iOS & Android — native and cross-platform</div>
+        </div>
+        <div class="hcard hcard-2">
+          <div class="hcard-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div class="hcard-title">Team Extension</div>
+          <div class="hcard-desc">Skilled developers integrated into your workflow</div>
+        </div>
+        <div class="hcard hcard-3">
+          <div class="hcard-icon">
+            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div class="hcard-title">App Support & Maintenance</div>
+          <div class="hcard-desc">Ongoing reliability for production apps</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="fade-in">
+      <span class="section-tag">WHAT WE DO</span>
+      <h2 class="section-title">Services built for<br/>real business outcomes</h2>
+      <p class="section-sub">From initial design to production deployment and beyond — we cover the full software lifecycle.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card fade-in">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="15" y2="11"/></svg></div>
+        <div class="svc-title">Mobile App Development</div>
+        <div class="svc-desc">End-to-end native and cross-platform apps for iOS and Android. From concept and UI/UX design to App Store and Google Play publishing.</div>
+        <div class="svc-tags"><span class="tag">iOS</span><span class="tag">Android</span><span class="tag">Flutter</span><span class="tag">React Native</span></div>
+      </div>
+      <div class="svc-card fade-in">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <div class="svc-title">Web Application Development</div>
+        <div class="svc-desc">Scalable, responsive web apps and admin dashboards. We build fast, secure, and maintainable systems tailored to your workflow.</div>
+        <div class="svc-tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">REST API</span></div>
+      </div>
+      <div class="svc-card fade-in">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="svc-title">Team Extension</div>
+        <div class="svc-desc">Dedicated senior developers integrated into your existing team. We work in your timezone, your tools, and your process — seamlessly.</div>
+        <div class="svc-tags"><span class="tag">Agile</span><span class="tag">Scrum</span><span class="tag">AU timezone</span></div>
+      </div>
+      <div class="svc-card fade-in">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+        <div class="svc-title">App Support & Maintenance</div>
+        <div class="svc-desc">Proactive monitoring, bug fixing, OS compatibility updates, and feature enhancements to keep your production app running at its best.</div>
+        <div class="svc-tags"><span class="tag">24/7 monitoring</span><span class="tag">SLA</span><span class="tag">CI/CD</span></div>
+      </div>
+      <div class="svc-card fade-in">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div class="svc-title">Upwork & Freelance Projects</div>
+        <div class="svc-desc">Verified Upwork profile with 12+ years of AU client delivery. Short-term and long-term engagements for startups and enterprises.</div>
+        <div class="svc-tags"><span class="tag">Fixed price</span><span class="tag">Hourly</span><span class="tag">AU clients</span></div>
+      </div>
+      <div class="svc-card fade-in">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="svc-title">App Publishing & ASO</div>
+        <div class="svc-desc">Complete end-to-end publishing on Google Play and Apple App Store. Includes store optimization, metadata, screenshots, and compliance.</div>
+        <div class="svc-tags"><span class="tag">Google Play</span><span class="tag">App Store</span><span class="tag">ASO</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="fade-in">
+      <span class="section-tag">ABOUT US</span>
+      <h2 class="section-title">Family-founded. Tech-driven.<br/>Growth-focused.</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-img-wrap fade-in">
+        <div class="about-card-main">
+          <div class="about-name">MuktaNarayan Solutions</div>
+          <div class="about-role">Private Limited · Barshi / Pune, Maharashtra</div>
+          <div class="about-highlight">
+            Founded on the blessings of family, guided by values of integrity and innovation — delivering world-class software from India to the world.
+          </div>
+          <div class="about-mini-stats">
+            <div class="mini-stat"><div class="mini-stat-n">2013</div><div class="mini-stat-l">Serving AU clients</div></div>
+            <div class="mini-stat"><div class="mini-stat-n">₹91L+</div><div class="mini-stat-l">Projected FY26</div></div>
+            <div class="mini-stat"><div class="mini-stat-n">4000+</div><div class="mini-stat-l">App users</div></div>
+            <div class="mini-stat"><div class="mini-stat-n">DPIIT</div><div class="mini-stat-l">Recognised startup</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="about-text fade-in">
+        <h3>Software crafted with purpose</h3>
+        <p>MuktaNarayan Solutions Private Limited is a DPIIT-recognised software startup based in Maharashtra, India. We specialise in building, maintaining, and scaling mobile and web applications for clients in Australia and beyond.</p>
+        <p>With over a decade of continuous delivery to a core Australian client base — supporting 4,000+ end users — we bring the reliability of a long-term partner with the agility of a startup.</p>
+        <div class="about-values">
+          <div class="value-item">
+            <div class="value-dot"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div class="value-text"><strong>Trust & transparency</strong><span>Clear communication, honest timelines, no surprises</span></div>
+          </div>
+          <div class="value-item">
+            <div class="value-dot"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+            <div class="value-text"><strong>Quality at every layer</strong><span>Code reviews, automated testing, CI/CD pipelines</span></div>
+          </div>
+          <div class="value-item">
+            <div class="value-dot"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <div class="value-text"><strong>Long-term partnership</strong><span>We grow with your product, not just ship and leave</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPS -->
+<section id="apps">
+  <div class="container">
+    <div class="fade-in text-center">
+      <span class="section-tag">OUR APPS</span>
+      <h2 class="section-title">Apps on Google Play &amp; App Store</h2>
+      <p class="section-sub">Products built, published, and maintained by MuktaNarayan Solutions — available on both major platforms.</p>
+    </div>
+    <div class="apps-grid" style="margin-top:52px">
+      <div class="app-card fade-in">
+        <div class="app-header">
+          <div class="app-icon">MN</div>
+          <div><div class="app-name">App Name 1</div><div class="app-cat">Productivity · Business</div></div>
+        </div>
+        <div class="app-desc">A brief description of what this app does and the problem it solves for your users. Highlight key features and benefits here.</div>
+        <div class="app-store-btns">
+          <a href="#" class="store-btn"><svg viewBox="0 0 24 24"><path d="M3 20.5v-17l18 8.5-18 8.5z"/></svg>Google Play</a>
+          <a href="#" class="store-btn"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 3a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm0 14.2a7.2 7.2 0 0 1-6-3.22c.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08a7.2 7.2 0 0 1-6 3.22z"/></svg>App Store</a>
+        </div>
+      </div>
+      <div class="app-card fade-in">
+        <div class="app-header">
+          <div class="app-icon" style="background:linear-gradient(135deg,#1D9E75,#185FA5)">MN</div>
+          <div><div class="app-name">App Name 2</div><div class="app-cat">Utilities · Lifestyle</div></div>
+        </div>
+        <div class="app-desc">Describe this app's purpose, its target users, and the value it delivers. You can highlight ratings or download count here.</div>
+        <div class="app-store-btns">
+          <a href="#" class="store-btn"><svg viewBox="0 0 24 24"><path d="M3 20.5v-17l18 8.5-18 8.5z"/></svg>Google Play</a>
+          <a href="#" class="store-btn"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 3a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm0 14.2a7.2 7.2 0 0 1-6-3.22c.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08a7.2 7.2 0 0 1-6 3.22z"/></svg>App Store</a>
+        </div>
+      </div>
+      <div class="app-card fade-in">
+        <div class="app-header">
+          <div class="app-icon" style="background:linear-gradient(135deg,#0f3060,#5DCAA5)">MN</div>
+          <div><div class="app-name">App Name 3</div><div class="app-cat">Education · Tools</div></div>
+        </div>
+        <div class="app-desc">Add your third app's description here. Include what makes it unique, who the target audience is, and any notable features.</div>
+        <div class="app-store-btns">
+          <a href="#" class="store-btn"><svg viewBox="0 0 24 24"><path d="M3 20.5v-17l18 8.5-18 8.5z"/></svg>Google Play</a>
+          <a href="#" class="store-btn"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 3a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm0 14.2a7.2 7.2 0 0 1-6-3.22c.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08a7.2 7.2 0 0 1-6 3.22z"/></svg>App Store</a>
+        </div>
+      </div>
+    </div>
+    <div class="app-placeholder-note fade-in">
+      <strong>Note for site owner:</strong> Replace "App Name 1/2/3" with your actual published app names, update the store links to your real Google Play and Apple App Store URLs, and replace the icon initials with your actual app icons.
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="container">
+    <div class="fade-in text-center">
+      <span class="section-tag">PORTFOLIO</span>
+      <h2 class="section-title">Projects we're proud of</h2>
+      <p class="section-sub">A selection of work delivered for our Australian clients and published products over the years.</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="port-card fade-in">
+        <div class="port-banner pb-1">AU Client App</div>
+        <div class="port-body">
+          <div class="port-title">Enterprise Mobile Platform</div>
+          <div class="port-desc">Large-scale mobile application supporting 4000+ users. Ongoing development and support since 2013 for a core Australian enterprise client.</div>
+          <div class="port-meta"><span class="port-tag">iOS</span><span class="port-tag">Android</span><span class="port-tag">12+ years</span><span class="port-tag">4000+ users</span></div>
+        </div>
+      </div>
+      <div class="port-card fade-in">
+        <div class="port-banner pb-2">Web Platform</div>
+        <div class="port-body">
+          <div class="port-title">Business Management Dashboard</div>
+          <div class="port-desc">Custom web application with real-time reporting, user management, and integrations for an Australian SME. React + Node.js stack.</div>
+          <div class="port-meta"><span class="port-tag">React</span><span class="port-tag">Node.js</span><span class="port-tag">PostgreSQL</span></div>
+        </div>
+      </div>
+      <div class="port-card fade-in">
+        <div class="port-banner pb-3">Published App</div>
+        <div class="port-body">
+          <div class="port-title">Consumer Mobile App</div>
+          <div class="port-desc">Independently published app on Google Play and Apple App Store. End-to-end built and maintained by MuktaNarayan Solutions.</div>
+          <div class="port-meta"><span class="port-tag">Flutter</span><span class="port-tag">Firebase</span><span class="port-tag">Play Store</span><span class="port-tag">App Store</span></div>
+        </div>
+      </div>
+      <div class="port-card fade-in">
+        <div class="port-banner pb-4">API & Backend</div>
+        <div class="port-body">
+          <div class="port-title">REST API Integration Project</div>
+          <div class="port-desc">High-performance backend API with third-party integrations, authentication, and cloud deployment for an Australian fintech client.</div>
+          <div class="port-meta"><span class="port-tag">Node.js</span><span class="port-tag">AWS</span><span class="port-tag">REST API</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="container">
+    <div class="fade-in text-center">
+      <span class="section-tag">BLOG</span>
+      <h2 class="section-title">Insights & updates</h2>
+      <p class="section-sub">Thoughts on software development, app publishing, and running a lean tech startup from India.</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card fade-in">
+        <div class="blog-date">April 2026 · App Development</div>
+        <div class="blog-title">How we ship mobile apps to 4000+ users with a lean team</div>
+        <div class="blog-excerpt">Building reliable, scalable apps without a large in-house team requires the right processes, tooling, and mindset. Here's how we do it...</div>
+        <a href="#" class="blog-read">Read more →</a>
+      </div>
+      <div class="blog-card fade-in">
+        <div class="blog-date">March 2026 · Startup Journey</div>
+        <div class="blog-title">Registering a DPIIT startup in India — our step-by-step experience</div>
+        <div class="blog-excerpt">From SPICe+ filing to 80-IAC tax holiday approval — a transparent walkthrough of our company registration journey in 2026...</div>
+        <a href="#" class="blog-read">Read more →</a>
+      </div>
+      <div class="blog-card fade-in">
+        <div class="blog-date">February 2026 · Tech</div>
+        <div class="blog-title">Flutter vs React Native in 2026 — which should you pick?</div>
+        <div class="blog-excerpt">After building production apps with both frameworks for Australian clients, here are our honest observations on performance, DX, and ecosystem...</div>
+        <a href="#" class="blog-read">Read more →</a>
+      </div>
+    </div>
+    <div class="blog-coming fade-in">
+      More articles coming soon — subscribe via the contact form below to get notified.
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="fade-in">
+      <span class="section-tag" style="background:rgba(29,158,117,0.2);color:var(--teal-light)">GET IN TOUCH</span>
+      <h2 class="section-title" style="color:#fff">Let's build something great together</h2>
+    </div>
+    <div class="contact-inner">
+      <div class="contact-info fade-in">
+        <h3>Ready to start your project?</h3>
+        <p>Whether you need a new app built from scratch, an existing system supported, or a dedicated developer joining your team — we'd love to hear about it.</p>
+        <div class="contact-items">
+          <div class="c-item">
+            <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div class="c-text"><span>Email</span><a href="mailto:contact@muktanarayan.in">contact@muktanarayan.in</a></div>
+          </div>
+          <div class="c-item">
+            <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div class="c-text"><span>Location</span><p>Barshi / Pune, Maharashtra, India</p></div>
+          </div>
+          <div class="c-item">
+            <div class="c-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="c-text"><span>Working hours (IST)</span><p>Mon–Fri, 9 AM – 7 PM</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form fade-in">
+        <div class="form-row">
+          <div class="form-group"><label>First name</label><input type="text" placeholder="Rahul"/></div>
+          <div class="form-group"><label>Last name</label><input type="text" placeholder="Sharma"/></div>
+        </div>
+        <div class="form-group"><label>Email address</label><input type="email" placeholder="you@company.com"/></div>
+        <div class="form-group"><label>Service needed</label>
+          <select>
+            <option value="">Select a service...</option>
+            <option>Mobile App Development</option>
+            <option>Web Application Development</option>
+            <option>Team Extension</option>
+            <option>App Support & Maintenance</option>
+            <option>App Publishing (Google Play / App Store)</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Tell us about your project</label><textarea placeholder="Briefly describe your project, timeline, and budget..."></textarea></div>
+        <button class="btn-submit" onclick="handleSubmit()">Send Message</button>
+        <div class="form-success" id="formSuccess">Thank you! We'll get back to you within 24 hours.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#home" class="nav-logo">
+          <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="16" stroke="#378ADD" stroke-width="2.5"/>
+            <circle cx="18" cy="18" r="16" stroke="#185FA5" stroke-width="2.5" stroke-dasharray="60 100" stroke-dashoffset="-10"/>
+            <polygon points="18,8 26,24 18,20 10,24" fill="#185FA5"/>
+            <polygon points="18,11 24,24 18,21" fill="#378ADD"/>
+            <polygon points="18,22 22,28 14,28" fill="#1D9E75"/>
+          </svg>
+          <span class="nav-logo-text">Mukta<span>Narayan</span></span>
+        </a>
+        <p>Software development, app publishing, and tech solutions for Australian and global businesses. DPIIT recognised startup, Maharashtra, India.</p>
+      </div>
+      <div class="footer-col">
+        <h4>SERVICES</h4>
+        <ul>
+          <li><a href="#services">Mobile App Development</a></li>
+          <li><a href="#services">Web Applications</a></li>
+          <li><a href="#services">Team Extension</a></li>
+          <li><a href="#services">App Support</a></li>
+          <li><a href="#services">App Publishing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>COMPANY</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#apps">Our Apps</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>CONNECT</h4>
+        <ul>
+          <li><a href="https://upwork.com" target="_blank">Upwork Profile</a></li>
+          <li><a href="#" target="_blank">LinkedIn</a></li>
+          <li><a href="#" target="_blank">GitHub</a></li>
+          <li><a href="mailto:contact@muktanarayan.in">Email Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 <span>MuktaNarayan Solutions Private Limited</span>. All rights reserved. CIN: U72900MH2026OPC000000</div>
+      <div class="footer-dpiit"><span class="dpiit-badge">DPIIT Recognised</span> Startup India · Section 80-IAC</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+function handleSubmit(){
+  document.getElementById('formSuccess').style.display='block';
+  setTimeout(()=>{document.getElementById('formSuccess').style.display='none'},5000);
+}
+
+// Scroll animations
+const obs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible')}});
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+// Smooth active nav highlight
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-100)cur=s.id});
+  navLinks.forEach(a=>{
+    a.style.color = a.getAttribute('href')==='#'+cur ? '#fff' : '';
+    a.style.background = a.getAttribute('href')==='#'+cur ? 'rgba(255,255,255,0.08)' : '';
+  });
+});
+</script>
+</body>
+</html>
