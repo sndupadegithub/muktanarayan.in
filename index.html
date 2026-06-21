@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MuktaNarayan Solutions Private Limited</title>
+  <meta
+    name="description"
+    content="MuktaNarayan Solutions Private Limited builds Salesforce solutions, mobile apps, offline-capable software, web platforms, and digital products."
+  />
+
+  <link rel="canonical" href="https://muktanarayan.in/" />
+  <meta name="theme-color" content="#0c1830" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="MuktaNarayan Solutions Private Limited" />
+  <meta property="og:description" content="Salesforce solutions, mobile apps, offline-capable software, web platforms, and digital products for businesses that need reliable technology." />
+  <meta property="og:image" content="https://muktanarayan.in/assets/og-image.png" />
+  <meta property="og:url" content="https://muktanarayan.in/" />
+  <meta property="og:site_name" content="MuktaNarayan Solutions" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MuktaNarayan Solutions Private Limited" />
+  <meta name="twitter:description" content="Salesforce solutions, mobile apps, offline-capable software, web platforms, and digital products." />
+  <meta name="twitter:image" content="https://muktanarayan.in/assets/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --surface-alt: #eef6fb;
+      --ink: #12233f;
+      --ink-soft: #576a86;
+      --line: rgba(18, 35, 63, 0.1);
+      --navy: #0c1830;
+      --navy-2: #13345b;
+      --blue: #2b6cb0;
+      --cyan: #34d2cf;
+      --cyan-soft: #dff8f6;
+      --shadow: 0 24px 56px rgba(13, 28, 52, 0.12);
+      --radius: 22px;
+      --radius-lg: 32px;
+      --container: 1180px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(52, 210, 207, 0.08), transparent 22%),
+        linear-gradient(180deg, #f9fbfd 0%, #f1f5fa 100%);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 38px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: rgba(52, 210, 207, 0.12);
+      color: #0d6d7f;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      box-shadow: 0 0 0 5px rgba(52, 210, 207, 0.12);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin: 0;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      letter-spacing: -0.04em;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 5.1rem);
+      line-height: 0.95;
+      color: #ffffff;
+      max-width: 760px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.04;
+      margin-top: 18px;
+    }
+
+    h3 {
+      font-size: 1.28rem;
+      line-height: 1.15;
+    }
+
+    p {
+      margin: 0;
+      color: var(--ink-soft);
+      line-height: 1.75;
+      font-size: 1rem;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .section-head p {
+      margin-top: 16px;
+      font-size: 1.04rem;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(12, 24, 48, 0.78);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-inner {
+      width: min(var(--container), calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: #ffffff;
+      min-width: 0;
+    }
+
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.08);
+      object-fit: contain;
+      padding: 6px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .brand-title {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 0.98rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .brand-sub {
+      font-size: 0.74rem;
+      color: rgba(255, 255, 255, 0.66);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 14px;
+      color: rgba(255, 255, 255, 0.76);
+      text-decoration: none;
+      border-radius: 999px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+    }
+
+    .nav-cta,
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .nav-cta,
+    .button-primary {
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      color: #ffffff;
+      box-shadow: 0 16px 34px rgba(43, 108, 176, 0.26);
+    }
+
+    .button-secondary {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .nav-cta:hover,
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border: 0;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      margin: 4px auto;
+      border-radius: 999px;
+      background: currentColor;
+    }
+
+    .mobile-menu {
+      display: none;
+      padding: 0 20px 18px;
+      background: rgba(12, 24, 48, 0.96);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .mobile-menu.open {
+      display: grid;
+      gap: 8px;
+    }
+
+    .mobile-menu a {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.88);
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 54px 0 96px;
+      background:
+        radial-gradient(circle at 10% 12%, rgba(52, 210, 207, 0.16), transparent 18%),
+        radial-gradient(circle at 86% 8%, rgba(43, 108, 176, 0.18), transparent 16%),
+        linear-gradient(135deg, #08111f 0%, #0c1830 44%, #13345b 100%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -8% -180px;
+      height: 340px;
+      background: linear-gradient(180deg, transparent, rgba(244, 247, 251, 0.98));
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.92fr);
+      gap: 42px;
+      align-items: center;
+    }
+
+    .hero-copy p {
+      margin-top: 24px;
+      max-width: 670px;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 1.07rem;
+    }
+
+    .hero-copy strong {
+      color: #ffffff;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .hero-notes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .hero-notes span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 0.9rem;
+    }
+
+    .hero-card {
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 28px 68px rgba(3, 10, 22, 0.34);
+    }
+
+    .hero-card img {
+      width: 100%;
+      border-radius: 24px;
+      object-fit: cover;
+    }
+
+    .hero-card-copy {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .hero-meta {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(8, 17, 31, 0.34);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-meta small {
+      display: block;
+      margin-bottom: 5px;
+      color: rgba(255, 255, 255, 0.56);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-meta strong,
+    .hero-meta span {
+      color: #ffffff;
+      line-height: 1.55;
+      font-size: 0.95rem;
+    }
+
+    .fact-grid,
+    .service-grid,
+    .focus-grid,
+    .contact-grid,
+    .company-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .fact-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: -18px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .fact-card,
+    .service-card,
+    .focus-card,
+    .company-card,
+    .contact-panel {
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.84);
+      box-shadow: var(--shadow);
+    }
+
+    .fact-card {
+      padding: 22px;
+      border-radius: 24px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .fact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 32px 64px rgba(13, 28, 52, 0.18);
+    }
+
+    .fact-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 1rem;
+    }
+
+    .service-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .service-card,
+    .focus-card,
+    .company-card,
+    .contact-panel {
+      padding: 28px;
+      border-radius: 28px;
+    }
+
+    .service-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 32px 64px rgba(13, 28, 52, 0.18);
+    }
+
+    .service-card::after {
+      content: "";
+      position: absolute;
+      right: -44px;
+      bottom: -80px;
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle, rgba(52, 210, 207, 0.12), transparent 70%);
+      pointer-events: none;
+    }
+
+    .icon {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #123a71, #34d2cf);
+      color: #ffffff;
+      box-shadow: 0 16px 34px rgba(18, 58, 113, 0.18);
+      margin-bottom: 18px;
+    }
+
+    .icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .service-card h3,
+    .focus-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag-row span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 11px;
+      border-radius: 999px;
+      background: var(--cyan-soft);
+      color: #0d6d7f;
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .focus-wrap {
+      padding: 36px;
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(52, 210, 207, 0.18), transparent 18%),
+        linear-gradient(135deg, #08111f 0%, #0c1830 52%, #13345b 100%);
+      box-shadow: 0 30px 68px rgba(8, 17, 31, 0.22);
+    }
+
+    .focus-wrap h2,
+    .focus-wrap h3,
+    .focus-wrap p,
+    .focus-wrap strong {
+      color: #ffffff;
+    }
+
+    .focus-grid {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+      align-items: start;
+    }
+
+    .focus-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .focus-item {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: 12px;
+      align-items: start;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .focus-index {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: #bff9f4;
+      font-size: 0.82rem;
+      font-weight: 800;
+      margin-top: 2px;
+    }
+
+    .focus-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.98rem;
+    }
+
+    .focus-side {
+      display: grid;
+      gap: 16px;
+    }
+
+    .focus-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: none;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .focus-card:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.16);
+    }
+
+    .focus-card span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 12px;
+    }
+
+    .company-grid {
+      grid-template-columns: minmax(320px, 0.94fr) minmax(0, 1.06fr);
+      align-items: stretch;
+    }
+
+    .company-photo {
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      position: relative;
+      min-height: 100%;
+    }
+
+    .company-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .company-photo::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 150px;
+      background: linear-gradient(180deg, transparent, rgba(12, 24, 48, 0.76));
+    }
+
+    .company-caption {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      z-index: 2;
+      color: #ffffff;
+    }
+
+    .company-caption strong {
+      display: block;
+      margin-bottom: 4px;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 1.06rem;
+    }
+
+    .company-logo {
+      width: 220px;
+      max-width: 100%;
+      margin-bottom: 22px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .info-item {
+      padding: 18px;
+      border-radius: 20px;
+      background: var(--surface-alt);
+      border: 1px solid rgba(18, 35, 63, 0.06);
+    }
+
+    .info-item small {
+      display: block;
+      margin-bottom: 6px;
+      color: #5f7ea3;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .info-item strong,
+    .info-item span {
+      display: block;
+      color: var(--ink);
+      line-height: 1.55;
+      font-size: 0.97rem;
+    }
+
+    .contact-grid {
+      grid-template-columns: minmax(0, 0.98fr) minmax(320px, 0.92fr);
+    }
+
+    .contact-copy {
+      padding: 36px;
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(52, 210, 207, 0.16), transparent 20%),
+        linear-gradient(135deg, #08111f 0%, #0c1830 52%, #13345b 100%);
+      box-shadow: 0 30px 68px rgba(8, 17, 31, 0.22);
+    }
+
+    .contact-copy h2,
+    .contact-copy p,
+    .contact-copy a,
+    .contact-copy strong {
+      color: #ffffff;
+    }
+
+    .contact-copy p {
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .contact-points {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .contact-point {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 14px;
+      padding: 16px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      align-items: start;
+      transition: background 0.3s ease;
+    }
+
+    .contact-point:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .contact-point .icon {
+      margin: 0;
+      width: 54px;
+      height: 54px;
+      box-shadow: none;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .contact-point small {
+      display: block;
+      margin-bottom: 4px;
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .contact-point a,
+    .contact-point span {
+      color: rgba(255, 255, 255, 0.92);
+      text-decoration: none;
+      line-height: 1.55;
+      font-size: 0.98rem;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .contact-panel ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-panel li {
+      padding: 16px 18px;
+      border-radius: 20px;
+      background: var(--surface-alt);
+      border: 1px solid rgba(18, 35, 63, 0.06);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    .contact-panel li strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #446789;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .footer {
+      padding: 34px 0 54px;
+    }
+
+    .footer-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(18, 35, 63, 0.08);
+    }
+
+    .footer-bar p,
+    .footer-links {
+      color: var(--ink-soft);
+      font-size: 0.93rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--blue);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1120px) {
+      .hero-grid,
+      .focus-grid,
+      .company-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .fact-grid,
+      .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 860px) {
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-block;
+      }
+
+      .section {
+        padding: 80px 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container,
+      .nav-inner {
+        width: min(var(--container), calc(100% - 24px));
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .fact-grid,
+      .service-grid,
+      .info-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card-copy {
+        grid-template-columns: 1fr;
+      }
+
+      .focus-wrap,
+      .contact-copy,
+      .contact-panel,
+      .company-card,
+      .service-card {
+        padding: 24px;
+      }
+
+      .footer-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .brand-sub {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MuktaNarayan Solutions Private Limited",
+    "url": "https://muktanarayan.in",
+    "logo": "https://muktanarayan.in/assets/logo.png",
+    "description": "Software development company delivering Salesforce solutions, mobile apps, offline-capable software, web platforms, and digital products.",
+    "email": "muktanarayansolutions@gmail.com",
+    "telephone": "+919922751149",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "G1026 Kolegaon Shingorni, Rd Malshiaj Solapur, Palashi",
+      "addressLocality": "Malshiras",
+      "addressRegion": "Maharashtra",
+      "postalCode": "413310",
+      "addressCountry": "IN"
+    },
+    "foundingDate": "2026-05-06",
+    "founders": [
+      { "@type": "Person", "name": "Shankar Narayan Dupade" },
+      { "@type": "Person", "name": "Shital Shankar Dupade" }
+    ],
+    "sameAs": []
+  }
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="MuktaNarayan Solutions home">
+        <img class="brand-logo" src="./assets/logo.png" alt="MuktaNarayan Solutions logo" width="400" height="209" />
+        <span class="brand-text">
+          <span class="brand-title">MuktaNarayan Solutions</span>
+          <span class="brand-sub">Private Limited</span>
+        </span>
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#focus">How We Work</a></li>
+          <li><a href="#company">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="nav-cta" href="#contact">Get in Touch</a>
+
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#services">Services</a>
+      <a href="#focus">How We Work</a>
+      <a href="#company">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Software Services & Digital Products</span>
+          <h1>We build software that works where it matters most.</h1>
+          <p>
+            <strong>MuktaNarayan Solutions</strong> delivers
+            Salesforce implementations, React Native mobile apps, offline-capable business tools,
+            web platforms, and APIs for businesses that need reliable technology.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact">Discuss Your Project</a>
+            <a class="button button-secondary" href="#services">View Services</a>
+          </div>
+
+          <div class="hero-notes">
+            <span>Salesforce</span>
+            <span>Mobile Apps</span>
+            <span>Web Platforms</span>
+            <span>Offline Systems</span>
+          </div>
+        </div>
+
+        <div class="hero-card reveal">
+          <div class="hero-card-copy" style="grid-template-columns: 1fr;">
+            <div class="hero-meta">
+              <small>Experience</small>
+              <strong>13+ years in Salesforce & software delivery</strong>
+            </div>
+            <div class="hero-meta">
+              <small>Platforms</small>
+              <span>Salesforce, Cordova, AngularJS, React Native, Node.js, Web</span>
+            </div>
+            <div class="hero-meta">
+              <small>Industries</small>
+              <span>Field operations, finance, agriculture, community services</span>
+            </div>
+            <div class="hero-meta">
+              <small>Engagement</small>
+              <span>Project-based, long-term support, or product partnerships</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container fact-grid">
+        <article class="fact-card reveal">
+          <strong>Salesforce Expertise</strong>
+          <p>End-to-end Salesforce implementation, customization, and integration services for growing businesses.</p>
+        </article>
+        <article class="fact-card reveal">
+          <strong>Mobile-First Products</strong>
+          <p>Cross-platform mobile apps built with React Native for Android and iOS, from concept to app store launch.</p>
+        </article>
+        <article class="fact-card reveal">
+          <strong>Offline-Ready Software</strong>
+          <p>Business tools designed for low-network and field environments where reliability is non-negotiable.</p>
+        </article>
+        <article class="fact-card reveal">
+          <strong>Long-Term Partnership</strong>
+          <p>Ongoing maintenance, feature development, and technical support to keep your software running smoothly.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Services</span>
+          <h2>End-to-end software services for businesses that need results.</h2>
+          <p>
+            From Salesforce consulting to custom mobile apps and web platforms, we handle the full
+            development lifecycle so you can focus on your business.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M4 12h10"></path><path d="M4 17h7"></path><circle cx="18" cy="17" r="3"></circle></svg>
+            </div>
+            <h3>Salesforce Services</h3>
+            <p>Implementation, customization, process automation, third-party integrations, and ongoing Salesforce platform support.</p>
+            <div class="tag-row">
+              <span>Implementation</span>
+              <span>Customization</span>
+              <span>Integrations</span>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"></rect><line x1="11" y1="18" x2="13" y2="18"></line></svg>
+            </div>
+            <h3>Mobile App Development</h3>
+            <p>Cross-platform mobile applications using React Native for business tools, consumer products, and app-store-ready launches.</p>
+            <div class="tag-row">
+              <span>React Native</span>
+              <span>Android</span>
+              <span>iOS</span>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3v18"></path><path d="M4 8h16"></path><path d="M4 16h16"></path></svg>
+            </div>
+            <h3>Offline-Capable Apps</h3>
+            <p>Software built for field use and low-network environments with local data capture, sync capabilities, and reliable performance.</p>
+            <div class="tag-row">
+              <span>Offline-first</span>
+              <span>Local storage</span>
+              <span>Data sync</span>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"></rect><path d="M8 20h8"></path><path d="M12 18v2"></path></svg>
+            </div>
+            <h3>Web Apps & Admin Panels</h3>
+            <p>Custom dashboards, internal portals, management systems, and web tools connected to your APIs and business operations.</p>
+            <div class="tag-row">
+              <span>Web apps</span>
+              <span>Dashboards</span>
+              <span>Admin tools</span>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m4 7 8-4 8 4v10l-8 4-8-4Z"></path><path d="M12 3v18"></path></svg>
+            </div>
+            <h3>App Publishing & Launch</h3>
+            <p>Complete app store submission, release management, compliance documentation, and post-launch iteration support.</p>
+            <div class="tag-row">
+              <span>Play Store</span>
+              <span>App Store</span>
+              <span>Release management</span>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="M12 5v14"></path><circle cx="12" cy="12" r="9"></circle></svg>
+            </div>
+            <h3>Ongoing Support & Maintenance</h3>
+            <p>Continuous maintenance, feature enhancements, bug fixes, and dedicated technical support for your software systems.</p>
+            <div class="tag-row">
+              <span>Maintenance</span>
+              <span>Feature work</span>
+              <span>Long-term support</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="focus">
+      <div class="container">
+        <div class="focus-wrap reveal">
+          <div class="focus-grid">
+            <div>
+              <span class="eyebrow" style="background: rgba(255,255,255,0.08); color: #d6fbfb;">How We Work</span>
+              <h2>A straightforward process that delivers working software.</h2>
+              <p style="margin-top: 18px;">
+                We skip the jargon and focus on understanding your problem, building the right solution,
+                and supporting it after launch. Every engagement follows a clear, proven process.
+              </p>
+              <div class="focus-list">
+                <div class="focus-item">
+                  <div class="focus-index">1</div>
+                  <div>
+                    <strong>Understand the problem</strong>
+                    <span>We start with your actual business needs, not assumptions. Clear requirements lead to better software.</span>
+                  </div>
+                </div>
+                <div class="focus-item">
+                  <div class="focus-index">2</div>
+                  <div>
+                    <strong>Build the right solution</strong>
+                    <span>Whether it's a Salesforce workflow, a mobile app, or a web platform, we deliver systems shaped around your goals.</span>
+                  </div>
+                </div>
+                <div class="focus-item">
+                  <div class="focus-index">3</div>
+                  <div>
+                    <strong>Support after launch</strong>
+                    <span>Software needs ongoing care. We provide maintenance, updates, and reliability so your tools keep working.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="focus-side">
+              <article class="focus-card">
+                <span>Project Work</span>
+                <h3>Custom software for your team</h3>
+                <p>Dedicated project engagements with clear deliverables, timelines, and a direct point of contact throughout.</p>
+              </article>
+              <article class="focus-card">
+                <span>Product Development</span>
+                <h3>From idea to app store</h3>
+                <p>Full product development support including design, engineering, testing, and launch for mobile and web products.</p>
+              </article>
+              <article class="focus-card">
+                <span>Long-Term Partnership</span>
+                <h3>Reliable technology partner</h3>
+                <p>Ongoing retainer arrangements for businesses that need consistent development support and technical expertise.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="company">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">About Us</span>
+          <h2>A technology company focused on delivering real results.</h2>
+          <p>
+            We combine deep Salesforce expertise with full-stack development skills
+            to build software that solves practical business problems.
+          </p>
+        </div>
+
+        <div class="company-grid">
+          <article class="company-card reveal" style="grid-column: 1 / -1;">
+            <div style="display: flex; align-items: center; gap: 22px; margin-bottom: 22px;">
+              <img class="company-logo" src="./assets/logo.png" alt="MuktaNarayan Solutions logo" width="400" height="209" />
+            </div>
+            <p>
+              MuktaNarayan Solutions Private Limited is a software company based in Maharashtra, India.
+              Founded by an engineer with 13+ years of hands-on experience in Salesforce consulting,
+              hybrid mobile apps (Cordova, AngularJS, React Native), and building offline-capable field tools,
+              we focus on delivering dependable technology for businesses that need systems that actually work.
+            </p>
+            <p style="margin-top: 14px;">
+              We work with businesses across industries including agriculture, finance, field operations,
+              and community services — serving clients in India and internationally, building everything
+              from Salesforce implementations to custom mobile and web applications.
+            </p>
+
+            <div class="info-grid" style="margin-top: 28px;">
+              <div class="info-item">
+                <small>Founded by</small>
+                <strong>Shankar Dupade</strong>
+                <span>13+ years of experience in Salesforce, Cordova, AngularJS, React Native, and hybrid app development</span>
+              </div>
+              <div class="info-item">
+                <small>Based in</small>
+                <strong>Maharashtra, India</strong>
+                <span>Working with clients across India and globally</span>
+              </div>
+              <div class="info-item">
+                <small>Core Expertise</small>
+                <strong>Salesforce & Custom Software</strong>
+                <span>Implementations, mobile apps, offline-first tools, web platforms</span>
+              </div>
+              <div class="info-item">
+                <small>How We Engage</small>
+                <strong>Flexible Partnerships</strong>
+                <span>Project-based work, retainers, or long-term product development</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <span class="eyebrow" style="background: rgba(255,255,255,0.08); color: #d6fbfb;">Contact</span>
+          <h2 style="margin-top: 18px;">Let's talk about your project.</h2>
+          <p style="margin-top: 18px;">
+            Whether you need Salesforce consulting, a mobile app, an offline-capable business tool,
+            or a web platform, reach out and we'll discuss how we can help.
+          </p>
+
+          <div class="contact-points">
+            <div class="contact-point">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"></path><path d="m4 7 8 6 8-6"></path></svg>
+              </div>
+              <div>
+                <small>Email</small>
+                <a href="mailto:muktanarayansolutions@gmail.com">muktanarayansolutions@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-point">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.15 12.8 19.8 19.8 0 0 1 2.08 4.09 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72l.34 2.26a2 2 0 0 1-.57 1.73L7.2 9.34a16 16 0 0 0 7.46 7.46l1.63-1.63a2 2 0 0 1 1.73-.57l2.26.34A2 2 0 0 1 22 16.92Z"></path></svg>
+              </div>
+              <div>
+                <small>Phone</small>
+                <a href="tel:+919922751149">+91 9922751149</a>
+              </div>
+            </div>
+
+            <div class="contact-point">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+              </div>
+              <div>
+                <small>Location</small>
+                <span>Palashi, Malshiras, Solapur, Maharashtra, India</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-row">
+            <a class="button button-primary" href="mailto:muktanarayansolutions@gmail.com">Email Us</a>
+            <a class="button button-secondary" href="https://wa.me/919922751149" target="_blank" rel="noreferrer">WhatsApp</a>
+          </div>
+        </div>
+
+        <aside class="contact-panel reveal">
+          <h3>How we can help</h3>
+          <p>
+            We work with businesses of all sizes across industries. Here's what a typical engagement looks like.
+          </p>
+
+          <ul>
+            <li>
+              <strong>Salesforce & CRM</strong>
+              New implementations, customizations, automations, and integrations with your existing systems.
+            </li>
+            <li>
+              <strong>Custom Applications</strong>
+              Mobile apps, web platforms, admin panels, and internal tools tailored to your workflow.
+            </li>
+            <li>
+              <strong>Ongoing Support</strong>
+              Maintenance contracts, feature development, bug fixes, and reliable technical partnership.
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bar">
+        <div>
+          <p>
+            &copy; 2026 <strong>MuktaNarayan Solutions Private Limited</strong>
+          </p>
+          <p style="font-size: 0.8rem; margin-top: 6px; color: var(--ink-soft); opacity: 0.7;">
+            CIN U62013PN2026PTC255287 &middot; Palashi, Malshiras, Solapur - 413310, Maharashtra, India
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="#services">Services</a>
+          <a href="#company">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenu = document.getElementById("mobileMenu");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelectorAll(".nav-links a, .mobile-menu a");
+    const desktopLinks = document.querySelectorAll(".nav-links a");
+    const sections = document.querySelectorAll("main section[id]");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    );
+
+    document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+
+    const syncActiveLink = () => {
+      let current = "";
+
+      sections.forEach((section) => {
+        if (window.scrollY >= section.offsetTop - 140) {
+          current = section.id;
+        }
+      });
+
+      desktopLinks.forEach((link) => {
+        link.classList.toggle("active", link.getAttribute("href") === "#" + current);
+      });
+    };
+
+    window.addEventListener("scroll", syncActiveLink, { passive: true });
+    window.addEventListener("load", syncActiveLink);
+  </script>
+</body>
+</html>
