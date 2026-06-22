@@ -189,14 +189,10 @@
       min-width: 0;
     }
 
-    .brand-logo {
-      width: 48px;
-      height: 48px;
+    .brand-icon {
+      width: 42px;
+      height: 42px;
       flex-shrink: 0;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.08);
-      object-fit: contain;
-      padding: 6px;
     }
 
     .brand-text {
@@ -694,6 +690,10 @@
       margin-top: 22px;
     }
 
+    .info-grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
     .info-item {
       padding: 18px;
       border-radius: 20px;
@@ -881,6 +881,10 @@
       .service-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+
+      .info-grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     @media (max-width: 860px) {
@@ -968,7 +972,7 @@
     "telephone": "+919922751149",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "G1026 Kolegaon Shingorni, Rd Malshiaj Solapur, Palashi",
+      "streetAddress": "G1026 Kolegaon Shingorni, Rd Malshiaj Solapur, Kolegaon",
       "addressLocality": "Malshiras",
       "addressRegion": "Maharashtra",
       "postalCode": "413310",
@@ -987,7 +991,12 @@
   <header class="nav">
     <div class="nav-inner">
       <a class="brand" href="#top" aria-label="MuktaNarayan Solutions home">
-        <img class="brand-logo" src="./assets/logo.png" alt="MuktaNarayan Solutions logo" width="400" height="209" />
+        <svg class="brand-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="50" cy="50" r="46" fill="none" stroke="#ffffff" stroke-width="4"/>
+          <path d="M50 28 L30 62 L42 62 L50 48 L58 62 L70 62 Z" fill="#1a3a6b"/>
+          <path d="M50 38 L36 62 L46 62 L50 54 L54 62 L64 62 Z" fill="#2ec4b6"/>
+          <path d="M50 38 L44 50 L50 44 L56 50 Z" fill="#5de8d8"/>
+        </svg>
         <span class="brand-text">
           <span class="brand-title">MuktaNarayan Solutions</span>
           <span class="brand-sub">Private Limited</span>
@@ -1251,46 +1260,41 @@
           </p>
         </div>
 
-        <div class="company-grid">
-          <article class="company-card reveal" style="grid-column: 1 / -1;">
-            <div style="display: flex; align-items: center; gap: 22px; margin-bottom: 22px;">
-              <img class="company-logo" src="./assets/logo.png" alt="MuktaNarayan Solutions logo" width="400" height="209" />
-            </div>
-            <p>
-              MuktaNarayan Solutions Private Limited is a software company based in Maharashtra, India.
-              Founded by an engineer with 13+ years of hands-on experience in Salesforce consulting,
-              hybrid mobile apps (Cordova, AngularJS, React Native), and building offline-capable field tools,
-              we focus on delivering dependable technology for businesses that need systems that actually work.
-            </p>
-            <p style="margin-top: 14px;">
-              We work with businesses across industries including agriculture, finance, field operations,
-              and community services — serving clients in India and internationally, building everything
-              from Salesforce implementations to custom mobile and web applications.
-            </p>
+        <div class="reveal" style="max-width: 820px;">
+          <p style="font-size: 1.08rem; line-height: 1.85;">
+            MuktaNarayan Solutions Private Limited is a software company based in Maharashtra, India.
+            Founded by an engineer with 13+ years of hands-on experience in Salesforce consulting,
+            hybrid mobile apps (Cordova, AngularJS, React Native), and building offline-capable field tools,
+            we focus on delivering dependable technology for businesses that need systems that actually work.
+          </p>
+          <p style="margin-top: 16px; font-size: 1.08rem; line-height: 1.85;">
+            We work with businesses across industries including agriculture, finance, field operations,
+            and community services — serving clients in India and internationally, building everything
+            from Salesforce implementations to custom mobile and web applications.
+          </p>
+        </div>
 
-            <div class="info-grid" style="margin-top: 28px;">
-              <div class="info-item">
-                <small>Founded by</small>
-                <strong>Shankar Dupade</strong>
-                <span>13+ years of experience in Salesforce, Cordova, AngularJS, React Native, and hybrid app development</span>
-              </div>
-              <div class="info-item">
-                <small>Based in</small>
-                <strong>Maharashtra, India</strong>
-                <span>Working with clients across India and globally</span>
-              </div>
-              <div class="info-item">
-                <small>Core Expertise</small>
-                <strong>Salesforce & Custom Software</strong>
-                <span>Implementations, mobile apps, offline-first tools, web platforms</span>
-              </div>
-              <div class="info-item">
-                <small>How We Engage</small>
-                <strong>Flexible Partnerships</strong>
-                <span>Project-based work, retainers, or long-term product development</span>
-              </div>
-            </div>
-          </article>
+        <div class="info-grid info-grid-4 reveal" style="margin-top: 42px;">
+          <div class="info-item">
+            <small>Founded by</small>
+            <strong>Shankar Dupade</strong>
+            <span>13+ years in Salesforce & hybrid app development</span>
+          </div>
+          <div class="info-item">
+            <small>Based in</small>
+            <strong>Maharashtra, India</strong>
+            <span>Working with clients across India and globally</span>
+          </div>
+          <div class="info-item">
+            <small>Core Expertise</small>
+            <strong>Salesforce & Custom Software</strong>
+            <span>Implementations, mobile apps, offline-first tools, web platforms</span>
+          </div>
+          <div class="info-item">
+            <small>How We Engage</small>
+            <strong>Flexible Partnerships</strong>
+            <span>Project-based, retainers, or long-term development</span>
+          </div>
         </div>
       </div>
     </section>
@@ -1332,7 +1336,7 @@
               </div>
               <div>
                 <small>Location</small>
-                <span>Palashi, Malshiras, Solapur, Maharashtra, India</span>
+                <span>Kolegaon, Malshiras, Solapur, Maharashtra, India</span>
               </div>
             </div>
           </div>
@@ -1376,7 +1380,7 @@
             &copy; 2026 <strong>MuktaNarayan Solutions Private Limited</strong>
           </p>
           <p style="font-size: 0.8rem; margin-top: 6px; color: var(--ink-soft); opacity: 0.7;">
-            CIN U62013PN2026PTC255287 &middot; Palashi, Malshiras, Solapur - 413310, Maharashtra, India
+            CIN U62013PN2026PTC255287 &middot; Kolegaon, Malshiras, Solapur - 413310, Maharashtra, India
           </p>
         </div>
         <div class="footer-links">
